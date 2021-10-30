@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "NumClass.h"
 
-void main() {
+int main() {
 
     int num1, num2;
     scanf("%d", &num1);
@@ -41,5 +41,7 @@ void main() {
         }
     }
     printf("\n");
+
+    return 0;
 
 }

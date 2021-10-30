@@ -1,8 +1,9 @@
 #include "NumClass.h"
-#include "math.h"
+#include <math.h>
 
 int isArmstrongAux(int num) {
-    if (num>0) return (pow(num%10,3) + isArmstrongAux(num/10));
+    if (num>0) 
+	return (pow(num%10,3) + isArmstrongAux(num/10));
 }
 
 int isArmstrong(int num) {
