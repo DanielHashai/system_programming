@@ -18,4 +18,3 @@ number. For Example: 145 is strong number
 1! + 4! + 5! = 145
 */
 int isStrong(int);
-
