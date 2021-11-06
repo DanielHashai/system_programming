@@ -1,17 +1,31 @@
 #include "NumClass.h"
-
-int isArmstrong(int num) {
-    int ones;
+#include <math.h>
+#define True 1
+#define False 0
+int inOrder(int a)
+{
+    int i = 0;
+    while (a) {
+        i++;
+        a = a / 10;
+    }
+    return i;
+}
+int isArmstrong(int a)
+{
+    int j;
+    int i = inOrder(a);
+    int temp = a;
     int sum = 0;
-    int num_in = num;
-
-    while (num > 0) {    
-        ones = num % 10;    
-        sum += ones * ones * ones;    
-        num = num / 10;    
-    } 
-
-    return (num_in == sum) ? TRUE : FALSE; 
+    while (temp) {
+        j = (temp%10);
+        sum += pow(j, i);
+        temp = (temp/10);
+    }
+    if (sum==a)
+        return True;
+    else
+        return False;
 }
 
 int isPalindrome(int num) {
