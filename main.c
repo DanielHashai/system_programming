@@ -9,7 +9,21 @@ int main() {
 
     int min = (num1 > num2) ? num2 : num1;
     int max = (num1 > num2) ? num1 : num2;
-    
+    printf("Armstrong Numbers: ");
+    for (int i = min; i <= max; i++) {
+        if (isArmstrong(i)) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+    printf("Palindrome Numbers: ");
+    for (int i = min; i <= max; i++) {
+        if (isPalindrome(i)) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+ 
     printf("Prime Numbers: ");
     for (int i = min; i <= max; i++) {
         if (isPrime(i)) {
@@ -18,14 +32,7 @@ int main() {
     }
     printf("\n");
 
-    printf("Armstrong Numbers: ");
-    for (int i = min; i <= max; i++) {
-        if (isArmstrong(i)) {
-            printf("%d ", i);
-        }
-    }
-    printf("\n");
-
+  
     printf("Strong Numbers: ");
     for (int i = min; i <= max; i++) {
         if (isStrong(i)) {
@@ -34,14 +41,7 @@ int main() {
     }
     printf("\n");
 
-    printf("Palindrome Numbers: ");
-    for (int i = min; i <= max; i++) {
-        if (isPalindrome(i)) {
-            printf("%d ", i);
-        }
-    }
-    printf("\n");
-
+ 
     return 0;
 
 }
