@@ -1,6 +1,14 @@
 #include "NumClass.h"
-#define True 1
-#define False 0
+#define TRUE 1
+#define FALSE 0
+}
+int pow(int a, unsigned int b)
+{
+    if (b == 0)
+        return 1;
+    if (b % 2 == 0)
+        return pow(a, b / 2) * pow(a, b / 2);
+    return a * pow(a, b / 2) * pow(a, b / 2);
 }
 int isArmstrongAux(int num,int len) {
     if (num==0)
@@ -15,7 +23,7 @@ int isArmstrong(int num) {
         len++;
         temp = temp/10;
     }
-    return (num == isArmstrongAux(num,len)) ? True : False;
+    return (num == isArmstrongAux(num,len)) ? TRUE : FALSE;
 }
 /**
  * Recursive function to find reverse of any number
