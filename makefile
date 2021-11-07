@@ -1,19 +1,19 @@
 all: mains maindloop maindrec
 
 loops:
-	gcc -c basicClassification.c -c advancedClassificationLoop.c ;
+	gcc -fPIC -c NumClass.h -c basicClassification.c -c advancedClassificationLoop.c ;
 	ar rcs libclassloops.a advancedClassificationLoop.o basicClassification.o ;
 
 recursives:
-	gcc -c basicClassification.c -c advancedClassificationRecursion.c;
+	gcc -fPIC -c NumClass.h  -c basicClassification.c -c advancedClassificationRecursion.c;
 	ar rcs libclassrec.a advancedClassificationRecursion.o basicClassification.o ;
 
 recursived:
-	gcc -c basicClassification.c -c advancedClassificationRecursion.c ;
+	gcc -fPIC -c NumClass.h  -c basicClassification.c -c advancedClassificationRecursion.c ;
 	gcc basicClassification.o advancedClassificationRecursion.o -shared -o libclassrec.so
 
 loopd:
-	gcc -c basicClassification.c -c advancedClassificationLoop.c ;
+	gcc -fPIC -c NumClass.h  -c basicClassification.c -c advancedClassificationLoop.c ;
 	gcc -shared basicClassification.o advancedClassificationLoop.o -o libclassloops.so -lm
 	
 mains:  recursives
