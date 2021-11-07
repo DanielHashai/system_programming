@@ -1,7 +1,8 @@
 #include "NumClass.h"
+#include <math.h>
 #define TRUE 1
 #define FALSE 0
-#define <math.h>
+
 int inOrder(int a)
 {
     int i = 0;
@@ -23,9 +24,9 @@ int isArmstrong(int a)
         temp = (temp/10);
     }
     if (sum==a)
-        return True;
+        return TRUE;
     else
-        return False;
+        return FALSE;
 }
 
 int isPalindrome(int num) {
