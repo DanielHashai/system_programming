@@ -29,7 +29,7 @@ loopd: libclassloops.so
 libclassloops.so: basicClassification.o advancedClassificationLoop.o
 	gcc -shared basicClassification.o advancedClassificationLoop.o -o libclassloops.so -lm
 
-%.o: %.c
+%.o: %.c NumClass.h
 	gcc -fPIC -c $< -o $@
 clean:
 	rm -rf *.o *.a *.so
