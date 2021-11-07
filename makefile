@@ -1,12 +1,12 @@
 all: mains maindloop maindrec
 
-mains:  recursives
+mains:  main.c recursives
 	gcc main.c -o mains -L. libclassrec.a -lm
 	
-maindloop: loopd
+maindloop: main.c loopd
 	gcc main.c -o maindloop -L. -lclassloops
 
-maindrec: recursived
+maindrec: main.c recursived
 	gcc main.c -o maindrec -L. -lclassrec -lm
 
 loops: libclassloops.a
@@ -30,6 +30,6 @@ libclassloops.so: basicClassification.o advancedClassificationLoop.o
 	gcc -shared basicClassification.o advancedClassificationLoop.o -o libclassloops.so -lm
 
 %.o: %.c NumClass.h
-	gcc -c -fPIC $< -o $@
+	gcc -c $< -o $@
 clean:
 	rm -rf *.o *.a *.so
