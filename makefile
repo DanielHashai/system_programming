@@ -12,7 +12,7 @@ recursived:
 
 loopd:
 	gcc -fPIC -c basicClassification.c -c advancedClassificationLoop.c ;
-	gcc -shared basicClassification.o advancedClassificationLoop.o -o libclassloops.so
+	gcc -shared basicClassification.o advancedClassificationLoop.o -o libclassloops.so -lm
 	
 mains: 
 	gcc -c basicClassification.c -c advancedClassificationRecursion.c;
@@ -22,7 +22,7 @@ mains:
 	
 maindloop:
 	gcc -c basicClassification.c -c advancedClassificationLoop.c ;
-	gcc -shared basicClassification.o advancedClassificationLoop.o -o libclassloops.so ;
+	gcc -shared basicClassification.o advancedClassificationLoop.o -o libclassloops.so -lm ;
 	gcc -c main.c ; 
 	gcc -o maindloop main.o -L. -lclassloops
 
