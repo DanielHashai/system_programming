@@ -2,18 +2,18 @@
 #define TRUE 1
 #define FALSE 0
 }
-int pow(int a, unsigned int b)
+int pow1(int a, unsigned int b)
 {
     if (b == 0)
         return 1;
     if (b % 2 == 0)
-        return pow(a, b / 2) * pow(a, b / 2);
-    return a * pow(a, b / 2) * pow(a, b / 2);
+        return pow1(a, b / 2) * pow1(a, b / 2);
+    return a * pow1(a, b / 2) * pow1(a, b / 2);
 }
 int isArmstrongAux(int num,int len) {
     if (num==0)
     return 0 ; 
-	return (pow((num%10),len) + isArmstrongAux(num/10,len));
+	return (pow1((num%10),len) + isArmstrongAux(num/10,len));
 }
 
 int isArmstrong(int num) {
@@ -36,7 +36,7 @@ int reverse(int num) {
     if(num == 0)
         return 0;
 
-    return ((num%10 * pow(10, digit)) + reverse(num/10));
+    return ((num%10 * pow1(10, digit)) + reverse(num/10));
 }
 
 /**
